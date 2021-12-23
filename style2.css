@@ -1,0 +1,60 @@
+:root {
+    --number: 1; /* variable in css*/
+}
+
+.square {
+    width: 25px;
+    height: 25px;
+    background: purple;
+    color:rgb(134, 224, 134);
+    /*animation part*/
+    position: absolute;
+    animation-name: move2;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.square::after { 
+    counter-reset: number var(--number); /*to access the variable*/
+    content: counter(number)
+}
+
+.delay1 {
+    animation-delay: 1s;
+    --number: 2; /*Changing var value in this square*/
+}
+
+.delay2 {
+    animation-delay: 2s;
+    --number: 3;
+}
+
+@keyframes move2 {
+    0% {
+        top: 0px; left: 0px;
+    }
+    25% {
+        top: 0px; left: 97%;
+    }
+    50% {
+        top: 96%; left: 97%;
+    }
+    75% {
+        top: 96%; left: 0px;
+    }
+    100% {
+        top: 0px; left: 0px;
+    }
+}
+
+button {
+    margin: 30%;
+    margin-left: 40%;
+    font-size: 18px;
+    border-radius: 25px;
+}
+a {
+    text-decoration: none;
+    font-weight: bold;
+    color: blue;
+}
